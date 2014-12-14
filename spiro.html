@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spiro!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" type="text/css">
+    <link rel="stylesheet" href="css/spiro.css">
+    <link href="http://fonts.googleapis.com/css?family=Playball" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+    <script src="js/spiro.js"></script>
+  </head>
+  <body>
+    <div id="pageHolder"  data-role="page">
+      <div data-role="panel" id="controls">
+	<h1>Spiro!</h1>
+	<label for="length">Length:</label>
+	<input name="length" id="length" value="100" min="1" max="1000" type="range">
+	<label for="iterations">Iterations:</label>
+	<input name="iterations" id="iterations" value="40" min="1" max="300" type="range">
+	<label for="color">Color:</label>
+	<input name="color" id="color" type="color" value="#0000ff">
+	<label for="angle">Angle:</label>
+	<input name="angle" id="angle" value="19" min="-360" max="360" type="range">
+	<label for="width">Width:</label>
+	<select id="width">
+	  <option selected="selected" value="1">Thin</option>
+	  <option value="2">Medium</option>
+	  <option value="4">Thick</option>
+	</select>
+	<label for="shape">Shape:</label>	
+	<select id="shape">
+	  <option selected="selected">Square</option>
+	  <option>Triangle</option>
+	  <option>Circle</option>
+	</select>
+	<div id="buttons">
+	  <button id="draw" class="ui-btn ui-btn-inline">Draw</button>
+	  <button id="clear" class="ui-btn ui-btn-inline">Clear</button>
+	</div>
+      </div>
+      <div id="canvasHolder" style="min-height: 100%"  data-role="main" class="ui-content">
+	<a id="controlIcon" href="#controls" class="ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-notext">#</a>
+	<canvas id="canvas"></canvas>
+      </div>
+    </div>
+  </body>
+  <script>
+    $(function() { spiro.setup(); });
+  </script>
+</html>

@@ -1,0 +1,29 @@
+.ui-content {
+    padding: 0;
+}
+
+.ui-mobile label {
+    font-weight: bold;
+}
+
+div#canvasHolder {
+    overflow-y: hidden;
+}
+
+a#controlIcon {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+h1 {
+    font-family: "Playball", cursive;
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+div#buttons {
+    text-align: center;
+    margin-top: 40px;
+}
