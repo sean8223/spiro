@@ -3,7 +3,9 @@
   <head>
     <title>Spiro!</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" type="text/css">
     <link rel="stylesheet" href="css/spiro.css">
@@ -13,7 +15,7 @@
     <script src="js/spiro.js"></script>
   </head>
   <body>
-    <div id="pageHolder"  data-role="page">
+    <div id="pageHolder"  data-role="page" data-fullscreen="true">
       <div data-role="panel" id="controls">
 	<h1>Spiro!</h1>
 	<label for="length">Length:</label>
@@ -35,6 +37,7 @@
 	  <option selected="selected">Square</option>
 	  <option>Triangle</option>
 	  <option>Circle</option>
+	  <option>Oval</option>
 	</select>
 	<div id="buttons">
 	  <button id="draw" class="ui-btn ui-btn-inline">Draw</button>
