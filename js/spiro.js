@@ -1,9 +1,5 @@
 var spiro = (function($) {
 
-    var centerx;
-
-    var centery;
-
     function drawSquare(ctx, x, y, len) {
 	ctx.moveTo(x, y);
 	ctx.beginPath();
@@ -64,6 +60,8 @@ var spiro = (function($) {
 	var canvas = $("#canvas")[0];
 	var ctx = canvas.getContext("2d");
 	
+	var x = parseInt($("#centerx").val());
+	var y = parseInt($("#centery").val());
 	var length = parseInt($("#length").val());
 	var iterations = parseInt($("#iterations").val());
 	var color = $("#color").val();
@@ -73,7 +71,7 @@ var spiro = (function($) {
 
 	ctx.strokeStyle = color;
 	ctx.lineWidth = width;
-	ctx.translate(centerx, centery);
+	ctx.translate(x, y);
 	for (var i = 0; i <  iterations; i++) {
 	    shapes[shape](ctx, 0, 0, length);
 	    ctx.rotate(angle*Math.PI/180);
@@ -87,6 +85,21 @@ var spiro = (function($) {
 	var ctx = canvas.getContext("2d");
 	ctx.fillStyle = "#ffffff";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
+	var centerx = canvas.width / 2;
+	var centery = canvas.height / 2;
+	$("#centerx").val(centerx);
+	$("#centery").val(centery);
+    }
+
+    function recenter(e) {
+	var controls = $("#controls");
+	if (controls.hasClass("ui-panel-open")) {
+	    $("#centerx").val(e.pageX - controls.width());
+	}
+	else {
+	    $("#centerx").val(e.pageX);
+	}
+	$("#centery").val(e.pageY);
     }
 
     var m = {};
@@ -95,17 +108,16 @@ var spiro = (function($) {
 
 	$("#draw").click(draw);
 	$("#clear").click(clear);
-
+	
 	$(".ui-content").height($.mobile.getScreenHeight());
 
 	var canvasHolder = $("#canvasHolder");
-	var canvas = $("#canvas")[0];
+	var canvasjq = $("#canvas");
+	canvasjq.click(recenter);
 
+	var canvas = canvasjq[0];
 	canvas.width = canvasHolder.width();
 	canvas.height = canvasHolder.height();
-
-	centerx = canvas.width / 2;
-	centery = canvas.height / 2;
 
 	clear();
     };

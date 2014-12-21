@@ -23,6 +23,15 @@ h1 {
     margin-bottom: 20px;
 }
 
+h1 a:link,
+h1 a:visited,
+h1 a:hover,
+h1 a:active {
+    color: #000000;
+    text-decoration: none;
+    font-weight: normal;
+}
+
 div#buttons {
     text-align: center;
     margin-top: 40px;
