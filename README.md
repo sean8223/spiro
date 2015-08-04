@@ -1,6 +1,6 @@
 # Spiro!
 
-A simple Spriograph generator based on HTML Canvas, with a JQuery Mobile
+A simple generator of spirograph-like patterns based on HTML Canvas, with a JQuery Mobile
 UI.
 
 
